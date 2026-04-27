@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inici</title>
+    <title>GI3P - Gestió d'Incidències</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <h1>Pàgina inicial</h1>
-    <p>Aquesta pàgina inclou codi php</p>
-    <?php
-    echo "<h2>Hola, món!</h2>";
-    echo "<p>Hora actual: " . date("H:i:s") . "</p>";
-    ?>
-    <h2>Variables</h2>
-    <p>Les variables s'han d'utilitzar per a definir la cadena de connexió independentment del codi</p>
-    <?php
-    $v1 = getenv('VAR1') ?: 'Ups, variable no definida';
-    $v2 = getenv('VAR2') ?: 'Ups, variable no definida';
-    echo "<p>El valor de la variable d'entorn VAR1 és: <strong>$v1</strong> </p>";
-    echo "<p>El valor de la variable d'entorn VAR2 és: <strong>$v2</strong></p>";
-    ?>
-    <div id="menu">
-        <hr>
-        <p><a href="index.php">Portada</a> </p>
-        <p><a href="llistar.php">Llistar</a></p>
-        <p><a href="crear.php">Crear</a></p>
-    </div>
-    <p>Fi de la pàgina</p>
-</body>
 
+    <h1>Benvinguts a la gestió d'incidències</h1>
+    <p>Selecciona com vols accedir:</p>
+
+    <div class="opcions">
+        <a href="usuari.php" class="opcio">
+            <i class="fas fa-user"></i><br>
+            Usuari
+        </a>
+        <a href="tecnic.php" class="opcio">
+            <i class="fas fa-wrench"></i><br>
+            Tècnic
+        </a>
+        <a href="responsable.php" class="opcio">
+            <i class="fas fa-clipboard-list"></i><br>
+            Responsable
+        </a>
+    </div>
+
+</body>
 </html>
