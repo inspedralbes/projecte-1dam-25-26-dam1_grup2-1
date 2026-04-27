@@ -11,7 +11,7 @@
     <header class="topbar">
         <div class="brand">
             <div class="logo">
-                <img src="/images/IP.jpg" alt="Institut Pedralbes">
+                <img src="images/IP.jpg" alt="Institut Pedralbes">
             </div>
             <div class="brand-text">
                 <span class="code">GI3P</span>
@@ -21,15 +21,15 @@
         </div>
         <nav class="nav">
             <a href="index.php" class="nav-item">
-                <img src="inici-removebg-preview.png" alt="">
+                <img src="images/inici.png" alt="">
                 <span>INICI</span>
             </a>
             <a href="#" class="nav-item">
-                <img src="about_us-removebg-preview.png" alt="">
+                <img src="images/about_us.png" alt="">
                 <span>SOBRE</span>
             </a>
             <a href="#" class="nav-item">
-                <img src="ajuda-removebg-preview.png" alt="">
+                <img src="images/ajuda.png" alt="">
                 <span>AJUDA</span>
             </a>
         </nav>
