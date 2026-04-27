@@ -1,8 +1,8 @@
 <?php
 
 
-$servername = "localhost";
-$username = "a25abualijab_Grup2";  // Username
+$servername = "db";
+$username = "a25abualijab_grup2";  // Username
 $password = "@ErikerAbubakar2";  // Password
 $dbname = "a25abualijab_DAM1_GI3P_Grup2";  // DB
 

@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <title>GI3P - Gestió d'Incidències</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <header class="topbar">
-        <div class="brand">
-            <div class="logo">
-                <img src="/images/IP.jpg" alt="Institut Pedralbes">
-            </div>
-            <div class="brand-text">
-                <span class="code">GI3P</span>
-                <span>Projecte final</span>
-                <span>Gestor d'incidències</span>
-            </div>
-        </div>
-        <nav class="nav">
-            <a href="index.php" class="nav-item">
-                <img src="inici-removebg-preview.png" alt="">
-                <span>INICI</span>
-            </a>
-            <a href="#" class="nav-item">
-                <img src="about_us-removebg-preview.png" alt="">
-                <span>SOBRE</span>
-            </a>
-            <a href="#" class="nav-item">
-                <img src="ajuda-removebg-preview.png" alt="">
-                <span>AJUDA</span>
-            </a>
-        </nav>
-    </header>
+<?php include 'header.php'; ?>
 
     <h1>Benvinguts a la gestió d'incidències</h1>
     <p>Selecciona com vols accedir:</p>
@@ -53,5 +18,4 @@
         </a>
     </div>
 
-</body>
-</html>
+<?php include 'footer.php'; ?>
