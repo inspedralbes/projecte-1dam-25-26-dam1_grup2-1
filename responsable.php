@@ -14,7 +14,7 @@
 
     <div class="opcions">
 
-        <a href="totes_incidencies.php" class="opcio">
+        <a href="veure_totes.php" class="opcio">
             <i class="fas fa-list"></i>
             Veure totes les incidències
         </a>

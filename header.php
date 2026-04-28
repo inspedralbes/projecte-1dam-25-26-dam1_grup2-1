@@ -24,7 +24,7 @@
                 <img src="images/inici.png" alt="">
                 <span>INICI</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="sobre.php" class="nav-item">
                 <img src="images/about_us.png" alt="">
                 <span>SOBRE</span>
             </a>
