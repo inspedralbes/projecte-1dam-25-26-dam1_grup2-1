@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <?php include 'connexio.php'; ?>
-    <p style="font-size: 1.5rem;">Registra la teva incidència:</p>
+    <h1>Registra la teva incidència:</h1>
 <div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem;">
     <form method="POST" action="guardar_incidencia.php">
     <p style="color: black;">Departament:</p>
