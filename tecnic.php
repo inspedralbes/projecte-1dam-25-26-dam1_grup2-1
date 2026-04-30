@@ -19,12 +19,12 @@
             Registra una incidencia
         </a>       
     
-        <a href="incidencies_assignades.php" class="opcio">
+        <a href="identificacio.php" class="opcio">
             <i class="fas fa-tools"></i>
             Incidències assignades
         </a>
 
-        <a href="actualitzar_estat.php" class="opcio">
+        <a href="identificacio.php" class="opcio">
             <i class="fas fa-sync-alt"></i>
             Actualitzar estat
         </a>
