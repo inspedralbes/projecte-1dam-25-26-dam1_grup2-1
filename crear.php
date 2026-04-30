@@ -70,8 +70,6 @@ function crear_casa($conn)
                 <input type="submit" value="Crear">
             </fieldset>
         </form>
-
-
         <?php
         //Tanquem l'else
     }
