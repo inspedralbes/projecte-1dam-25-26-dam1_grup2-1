@@ -1,26 +1,43 @@
-<?php 'include header.php'?>
+<?php include 'header.php'; ?>
+<? include 'connexio.php'; ?>
 
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/styles.css">
-    <title>GI3P - Usuari</title>
-    <h2>Incidencies finalitzades</h2>
-<?php
-require_once 'connexio.php';
-?>
-<?php
-$sql = "SELECT * FROM incidencies WHERE data_fi IS NOT NULL";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo $row["id_inc"] 
-            .$row["departament_id"]   
-            .$row["data_ini"]      
-            .$row["data_fi"]
-            .$row["tecnic_id"];
-        echo " <a href='esborrar.php?id=" . $row["id_inc"] . "'>Esborrar</a></p>";
-    }
-} else {
-    echo "<p> No hi ha dades a mostrar.</p>";
-}
-$conn->close();
-?>
+
+   <h1>Incidencies finalitzades</h1>
+   <header>
+       <div style="max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; color: black;">
+           <?php
+           $sql = "SELECT i.id_inc, i.descripcio, i.data_ini, i.data_fi, i.prioritat,
+        d.nom AS departament,
+        t.nom as tecnic
+        FROM incidencies i
+        LEFT JOIN departaments d ON i.departament_id = d.id_dept
+        LEFT JOIN tecnics t ON i.tecnic_id = t.id_tecnic
+        WHERE i.data_fi IS NOT NULL
+        ORDER BY i.data_ini DESC";
+           $result = $conn->query($sql);
+           ?>
+           <table border="1" style="width: auto; margin: 0 auto; border-collapse: collapse;">
+               <tr style="background: white;">
+                   <th>ID</th>
+                   <th>Departament</th>
+                   <th>Data Inici</th>
+                   <th>Descripció</th>
+                   <th>Prioritat</th>
+                   <th>Tècnic</th>
+                   <th>Data fi</th>
+                   <th>Estat</th>
+                   <th>Veure actualitzacions</th>
+               </tr>
+       <?php while ($row = $result->fetch_assoc()): ?>
+       <tr>
+           <td><?php echo $row['id_inc']; ?></td>
+           <td><?php echo $row['departament']; ?></td>
+           <td><?php echo $row['data_ini']; ?></td>
+           <td><?php echo $row['descripcio']; ?></td>
+           <td><?php echo $row['prioritat']; ?></td>
+           <td><?php echo $row['tecnic'] ?? '-'; ?></td>
+           <td><?php echo $row['data_fi']; ?></td>  
+           <td><?php echo $row['data_fi'] ? 'Tancada' : 'Oberta'; ?></td>  
+           <td><a href="actualitzar_estat.php?incidencia_id=<?php echo $row['id_inc']; ?>">actualitzacions</a></td>
+               </tr>
+       <?php endwhile; ?>
