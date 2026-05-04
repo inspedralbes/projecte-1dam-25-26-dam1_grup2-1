@@ -28,7 +28,7 @@
                 <img src="images/about_us.png" alt="">
                 <span>SOBRE</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="ajuda.php" class="nav-item">
                 <img src="images/ajuda.png" alt="">
                 <span>AJUDA</span>
             </a>
