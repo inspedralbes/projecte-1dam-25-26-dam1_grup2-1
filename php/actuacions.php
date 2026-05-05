@@ -14,13 +14,24 @@
     $dades = $conn->query("SELECT * FROM incidencies WHERE id_inc='$id'")->fetch_assoc();
     $estat_actual = $dades['data_fi'] ? 'Tancada' : 'Oberta';
     ?>
+    
     <form method="POST">
+        <p style = color:black;>Estat d'Incidència</p>
         <select name="estat" style="width: 100%; padding: 0.5rem;">
             <option value="Oberta" <?= $estat_actual == 'Oberta' ? 'selected' : '' ?>>Oberta</option>
             <option value="Tancada" <?= $estat_actual == 'Tancada' ? 'selected' : '' ?>>Tancada</option>
         </select>
         <br><br>
+        <br>
+        <p style = color:black;>Descripció</p>
+        <textarea name="descripcio" rows="4" style="width: 100%; padding: 0.5 rem;"></textarea>
+        <br><br>
+        <p style="color: black;">Data Actuació</p>
+        <input type = "date">
+        <br><br>
         <button type="submit">Guardar</button>
+
     </form>
 </div>
+
 <?php include 'footer.php'; ?>

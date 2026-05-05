@@ -10,7 +10,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - .:/var/www/html
+      - ./php:/var/www/html
     environment:
       # Variables per a la connexió a la base de dades
       DB_HOST: db

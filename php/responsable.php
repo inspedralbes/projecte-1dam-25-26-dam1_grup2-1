@@ -19,11 +19,6 @@
             Veure totes les incidències
         </a>
 
-        <a href="modificar.php" class="opcio">
-            <i class="fas fa-user-cog"></i>
-            Assignar incidències
-        </a>
-
         <a href="gestionar_tecnics.php" class="opcio">
             <i class="fas fa-users"></i>
             Gestionar tècnics
