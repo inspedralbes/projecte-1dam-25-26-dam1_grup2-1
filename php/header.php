@@ -11,7 +11,9 @@
     <header class="topbar">
         <div class="brand">
             <div class="logo">
-                <img src="images/IP.jpg" alt="Institut Pedralbes">
+               <a href="index.php" class="logo-item">
+  <img src="images/IP.jpg" alt="Logo IP">
+</a>
             </div>
             <div class="brand-text">
                 <span class="code">GI3P</span>
