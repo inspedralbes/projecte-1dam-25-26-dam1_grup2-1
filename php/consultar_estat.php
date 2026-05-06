@@ -1,16 +1,29 @@
 <?php include 'header.php'; ?>
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/styles.css">
-    <title>GI3P </title>
-    <h2>Consultar estat de la incidència</h2>
-<form action="consultori_dades.php" method="post">
-    <li>
-      <label for="Id incidencia"> *Id incidencia</label>
-      <input type="text" id="number" name="id_incidencia" />
-    </li>
-    <li class="button">
-  <button type="submit">Consulta</button>
-</li>
-</form>
-</body>
-</html>
+<?php include 'connexio.php'; ?>
+
+<h1>Identifica't</h1>
+
+<div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem;">
+    <?php if (!isset($_GET['id_inc'])): ?>
+        <p style="color: black;">Digues l'id de la incidencia:</p>
+        <form method="GET" action="">
+            <input type="text" name="id_inc" style="width: 100%; padding: 0.5rem;" required>
+            <br><br>
+            <button type="submit">Consulta l'estat</button>
+        </form>
+    <?php else: ?>
+        <?php
+        $id_inc = $_GET['id_inc'];
+        $Inci = $conn->query("SELECT id_inc FROM incidencies WHERE id_inc = '$id_inc'")->fetch_assoc();
+        
+        if ($Inci):
+            echo "<script>window.location.href = 'consultori_dades.php?id_inc=" . $Inci['id_inc'] . "';</script>";
+            exit;
+        else:
+        ?>
+            <p style="color: red;">Incidencia no registrada</p>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>
+
+<?php include 'footer.php'; ?>
