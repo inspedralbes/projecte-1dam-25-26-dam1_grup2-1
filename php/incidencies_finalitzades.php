@@ -26,7 +26,7 @@
                    <th>Tècnic</th>
                    <th>Data fi</th>
                    <th>Estat</th>
-                   <th>Veure actualitzacions</th>
+                   <th>Actuacions</th>
                </tr>
        <?php while ($row = $result->fetch_assoc()): ?>
        <tr>
@@ -38,6 +38,6 @@
            <td><?php echo $row['tecnic'] ?? '-'; ?></td>
            <td><?php echo $row['data_fi']; ?></td>  
            <td><?php echo $row['data_fi'] ? 'Tancada' : 'Oberta'; ?></td>  
-           <td><a href="actualitzar_estat.php?incidencia_id=<?php echo $row['id_inc']; ?>">actualitzacions</a></td>
+           <td><a href="veure_actuacions.php?incidencia_id=<?php echo $row['id_inc']; ?>">VEURE</a></td>
                </tr>
        <?php endwhile; ?>
