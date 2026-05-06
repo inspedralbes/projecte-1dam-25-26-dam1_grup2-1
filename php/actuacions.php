@@ -2,7 +2,8 @@
 <?php include 'connexio.php'; ?>
 
 <h1>Gestionar incidència</h1>
-<div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem;">
+
+<div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem; color: black;">
     <?php
     $id = $_GET['id'];
     if ($_POST) {
@@ -12,34 +13,41 @@
         $descripcio_actuacio = $conn->real_escape_string($_POST['descripcio_actuacio']);
         $data_actuacio = $_POST['data_actuacio'];
         $temps_minuts = $_POST['temps_minuts'];
+        $visible = isset($_POST['visible']) ? 1 : 0;
         
         $conn->query("INSERT INTO actuacions (descripcio, data_actuacio, temps_minuts, visible_usuari, incidencia_id) 
-                      VALUES ('$descripcio_actuacio', '$data_actuacio', $temps_minuts, 1, $id)");
+                      VALUES ('$descripcio_actuacio', '$data_actuacio', $temps_minuts, $visible, $id)");
         
-        echo "<p style='color: green; font-weight: bold;'>Actualitzat 😎👌🔥</p>";
+        echo "<p style='color: green; font-weight: bold;'>Actualitzat</p>";
     }
     $dades = $conn->query("SELECT * FROM incidencies WHERE id_inc='$id'")->fetch_assoc();
-    $estat_actual = $dades['data_fi'] ? 'Tancada' : 'Oberta'; ?>
+    $estat_actual = $dades['data_fi'] ? 'Tancada' : 'Oberta';
+    ?>
     
     <form method="POST">
-        <p style="color:black;">Estat d'Incidència</p>
+        <p><strong>Estat d'Incidència</strong></p>
         <select name="estat" style="width: 100%; padding: 0.5rem;">
             <option value="Oberta" <?= $estat_actual == 'Oberta' ? 'selected' : '' ?>>Oberta</option>
             <option value="Tancada" <?= $estat_actual == 'Tancada' ? 'selected' : '' ?>>Tancada</option>
         </select>
         <br><br>
         
-        <p style="color:black;">Descripció de l'actuació</p>
+        <p><strong>Descripció de l'Actuació</strong></p>
         <textarea name="descripcio_actuacio" rows="4" style="width: 100%; padding: 0.5rem;" required></textarea>
         <br><br>
 
-        <p style ="color: black;">Temps (minuts)</p>
+        <p><strong>Temps (min)</strong></p>
         <input type="number" name="temps_minuts" value="0" style="width: 100%; padding: 0.5rem;" required>
         <br><br>
 
-        <p style="color: black;">Data Actuació</p>
+        <p><strong>Data Actuació</strong></p>
         <input type="date" name="data_actuacio" value="<?= date('Y-m-d') ?>" style="width: 100%; padding: 0.5rem;" required>
         <br><br>
+        
+        <p><strong>Visible per l'Usuari?</strong></p>
+        <input type="checkbox" name="visible" value="1" checked> Sí
+        <br><br>
+        
         <button type="submit">Guardar</button>
     </form>
 </div>
