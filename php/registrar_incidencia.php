@@ -1,0 +1,24 @@
+<?php include 'header.php'; ?>
+<?php include 'connexio.php'; ?>
+    <h1>Registra la teva incidència:</h1>
+<div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem;">
+    <form method="POST" action="guardar_incidencia.php">
+    <p style="color: black;">Departament:</p>
+    <select name="departament_id" style="width: 100%; padding: 0.5 rem;">
+        <option value="">Selecciona...</option>
+        <?php
+        $result = $conn->query("SELECT id_dept, nom FROM departaments");
+        while ($row = $result->fetch_assoc()){
+            echo "<option value='" . $row['id_dept'] . "'>" . $row['nom'] . "</option>";
+        }
+        ?>
+        </select>
+        <p style="color: black;">Descripció:</p>
+
+        <textarea name="descripcio" rows="4" style="width: 100%; padding: 0.5 rem;"></textarea>
+        <br>
+        <br>
+        <button type="submit">Registrar</button>
+</form>
+</div>
+<?php include 'footer.php'; ?>
