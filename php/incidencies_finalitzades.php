@@ -13,7 +13,7 @@
         LEFT JOIN departaments d ON i.departament_id = d.id_dept
         LEFT JOIN tecnics t ON i.tecnic_id = t.id_tecnic
         WHERE i.data_fi IS NOT NULL
-        ORDER BY i.data_ini DESC";
+        ORDER BY i.id_inc ASC";
            $result = $conn->query($sql);
            ?>
            <table border="1" style="width: auto; margin: 0 auto; border-collapse: collapse;">

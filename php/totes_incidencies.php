@@ -11,7 +11,7 @@
             FROM incidencies i
             LEFT JOIN departaments d ON i.departament_id = d.id_dept
             LEFT JOIN tecnics t ON i.tecnic_id = t.id_tecnic
-            ORDER BY i.data_ini DESC";
+            ORDER BY i.id_inc ASC";
     $result = $conn->query($sql);
     ?>
     
@@ -49,5 +49,4 @@
         <?php endwhile; ?>
     </table>
 </div>
-
 <?php include 'footer.php'; ?>
